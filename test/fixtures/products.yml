@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  seo: MyString
+  precio: 9.99
+  status: 1
+  category_id: 1
+
+two:
+  name: MyString
+  seo: MyString
+  precio: 9.99
+  status: 1
+  category_id: 1

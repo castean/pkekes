@@ -1,0 +1,47 @@
+<div class="clearfix">&nbsp;</div>
+<div id="relateItems" class="carousel slide">
+  <div class="page-header">
+    <h3>Articulos Relacionados</h3>
+  </div>
+
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+        <div class="active item">
+           <ul class="thumbnails">
+              <%my_limit = 4%>
+              <% @categoria = Product.find(:all, :conditions => {:category_id => @product.category_id}, :limit => my_limit)%>
+              <% @categoria.each do |producto| %>
+                 <li class="span3">
+                    <div class="thumbnail">
+                       <%= image_tag producto.avatar.url, :size => "240x180" %>
+                       <div class="caption">
+                          <h5><%= producto.name %></h5>
+                          <p><span class="rating-static rating-45"></span></p>
+                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <p><a class="btn btn-primary" href="detail.html"><i class="icon-shopping-cart icon-white"></i> $<%= producto.precio %></a> <a class="btn pull-right" href="detail.html">mas...</a></p>
+                       </div>
+                    </div>
+                 </li>
+              <%end%>
+           </ul>
+        </div>
+        <div class="item">
+           <ul class="thumbnails">
+              <li class="span3">
+                 <div class="thumbnail">
+                    <%= image_tag "missing.gif", :size => "260x180" %>
+                    <div class="caption">
+                       <h5>Thumbnail label</h5>
+                       <p><span class="rating-static rating-40"></span></p>
+                       <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                       <p><a class="btn btn-primary" href="detail.html"><i class="icon-shopping-cart icon-white"></i><%= @product.precio %></i></p></a> <a class="btn pull-right" href="detail.html">mas...</a></p>
+                    </div>
+                 </div>
+              </li>
+           </ul>
+        </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#relateItems" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#relateItems" data-slide="next">&rsaquo;</a>
+</div>

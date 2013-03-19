@@ -1,0 +1,326 @@
+<section id="main" class="container">
+<!-- Detail products -->
+<div class="row">
+  <section id="slider">
+    <div class="span5">
+      <div class="page-header">
+        <h3>
+           <%= @product.name%> <small>Body + 18-55mm lens</small>
+        </h3>
+        <%= link_to 'Edit', edit_product_path(@product) %> |
+        <%= link_to 'Back', products_path %>
+
+        <p>
+          <b>Name:</b>
+          <%= @product.name %>
+        </p>
+
+        <p>
+          <b>Seo:</b>
+          <%= @product.seo %>
+        </p>
+
+        <p>
+          <b>Precio:</b>
+          <%= @product.precio %>
+        </p>
+
+        <p>
+          <b>Status:</b>
+          <%if @product.status = 1 %>
+              Activo
+          <%else%>
+              Inactivo
+          <%end%>
+        </p>
+
+        <p>
+          <b>Category:</b>
+          <%= @product.category.name %>
+        </p>
+        <%#= image_tag @product.avatar.url, :size => "260x180" %>
+        <br/>
+        <br/>
+      </div>
+
+      <table class="product">
+        <tr>
+          <td>
+            <span class="rating-static rating-45" style="float: right;"></span>
+          </td>
+          <td>
+            (2,908 customer reviews)
+          </td>
+        </tr>
+        <tr>
+          <td>Availability:</td>
+          <td>Pre-Order</td>
+        </tr>
+        <tr>
+          <td>Precio de Lista:</td>
+          <td><span class="listPrice">$2,200</span></td>
+        </tr>
+        <tr>
+          <td>Precio:</td>
+          <td><span class="priceLarge">$2,000</span></td>
+        </tr>
+        <tr>
+          <td>Usted Ahorra:</td>
+          <td><span class="youSave">$200</span></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:left">
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <a href="#" class="btn"><i class="icon-heart"></i> Lo Quiero!</a>
+              </div>
+              <div class="btn-group">
+
+                <a href="#" class="btn"><i class="icon-ok"></i> Compara</a>
+              </div>
+              <div class="btn-group pull-right">
+                <%#= link_to raw('<i class="icon-shopping-cart icon-white"></i>'), card, confirm: 'Esta usted Seguro?', method: :delete, :class => 'btn btn-info' %>
+                <a href="#" class="btn btn-info"><i class="icon-shopping-cart icon-white"></i> Comprar</a>
+              </div>
+              <div class="btn-group pull-right">
+                <a class="btn" id="qty-minus" href="javascript:;;"><i class="icon-minus-sign"></i></a>
+                <a class="btn active" href="#"><span id="item_qty">1</span></a>
+                <a class="btn " id="qty-plus" href="javascript:;;"><i class="icon-plus-sign"></i></a>&nbsp;
+              </div>
+
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <hr>
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_pinterest_pinit"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f8f7bbc1ebd6187"></script>
+      <!-- AddThis Button END -->
+    </div>
+    <div class="span7">
+      <div class="carousel slide" id="myCarousel">
+        <div class="carousel-inner">
+          <div class="active item">
+            <%= image_tag @product.avatar.url %>
+          </div>
+          <div class="item">
+            <img alt="" src="demo/slider/large/canon-body2.jpg">
+          </div>
+          <div class="item">
+            <img alt="" src="demo/slider/large/canon-lens.jpg">
+          </div>
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<div class="row">
+  <div class="span12">
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#1" data-toggle="tab">Detalles</a></li>
+        <li><a href="#2" data-toggle="tab">Reseñas</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="1">
+          <div class="page-header"><h3>Descripción</h3></div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="page-header"><h3>Caracteristicas del Producto <small>Style: Body + 18-55mm lens</small></h3></div>
+          <ul>
+            <li>12.2 MP CMOS sensor and DIGIC 4 Image Processor for high image quality and speed.</li>
+            <li>ISO 100 - 6400 for shooting from bright to dim light.</li>
+            <li>Improved EOS HD Movie mode with expanded recording and with in-camera video editing options.</li>
+            <li>High speed, reliable 9-point AF system utilizing a high precision, f/5.6 cross-type center point.</li>
+            <li>Enhanced metering with a 63-zone, Dual-layer metering system for accurate metering between exposures.</li>
+          </ul>
+          <div class="page-header"><h3>Detalles del Producto</h3></div>
+          <ul>
+            <li><strong>Product Dimensions:</strong> 5.1 x 3.1 x 3.9 inches ; 7 ounces</li>
+            <li><strong>Shipping Weight:</strong> 2 pounds (View shipping rates and policies)</li>
+            <li><strong>Shipping:</strong> This item is also available for shipping to select countries outside the U.S.</li>
+            <li><strong>ASIN:</strong> B004J3Y9U6</li>
+            <li><strong>Item model number:</strong> REBEL T3 BLACK</li>
+            <li><strong>Batteries:</strong> 1 Nonstandard Battery batteries required. (included)</li>
+          </ul>
+        </div>
+        <div class="tab-pane" id="2">
+          <div class="row">
+            <div class="span12">
+              <div class="page-header">
+                <h3>User Ratings</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <div id="reviews_chart">
+                <!--
+                Formula to calculate with of rating bar
+                Width = ((Number of rates * 100)/Total rates) * 2;
+                Ex:  Width = ((1,967 * 100) / 2908) * 2 = 135.28px;
+                -->
+                <table>
+                  <tbody>
+                  <tr>
+                    <td class="histogram-msg top-row">5 star</td>
+                    <td class="top-row bar-cell"><span class="bar bar5" style="width:135.28px">&nbsp;</span>&nbsp;<span>1,967</span></td>
+                  </tr>
+                  <tr>
+                    <td class="histogram-msg">4 star</td>
+                    <td class="bar-cell"><span class="bar bar4" style="width:36.9px">&nbsp;</span>&nbsp;<span>537</span></td>
+                  </tr>
+                  <tr>
+                    <td class="histogram-msg">3 star</td>
+                    <td class="bar-cell"><span class="bar bar3" style="width:9.6px">&nbsp;</span>&nbsp;<span>140</span></td>
+                  </tr>
+                  <tr>
+                    <td class="histogram-msg">2 star</td>
+                    <td class="bar-cell"><span class="bar bar2" style="width:2.33px">&nbsp;</span>&nbsp;<span>34</span></td>
+                  </tr>
+                  <tr>
+                    <td class="bottom-row histogram-msg">1 star</td>
+                    <td class="bottom-row bar-cell"><span class="bar bar1" style="width:7px">&nbsp;</span>&nbsp;<span>93</span></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="well" id="average_rating">
+                <h4>Average rating</h4>
+                <h2>4.5</h2>
+                <p><span class="rating-static rating-45"></span></p>
+                <p>2,908</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <div class="page-header">
+                <h3>User Reviews <small><a class="btn pull-right" href="javascript:;;" id="writeReview"><i class="icon-pencil"></i> Write a review</a></small></h3>
+              </div>
+              <div id="reviewForm">
+                <form class="form-horizontal well">
+                  <div class="control-group">
+                    <label class="control-label" for="input01">Name</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="input01">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input01">Email</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="input02">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input01">Title</label>
+                    <div class="controls">
+                      <input type="text" class="input-xlarge" id="input03">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input01">Message</label>
+                    <div class="controls">
+                      <textarea class="input-xlarge" rows="3"></textarea>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="input01">Rating</label>
+                    <div class="controls">
+                      <div data-toggle="buttons-radio" class="btn-group">
+                        <a href="javascript:;;" class="btn"><i class="icon-star-empty"></i></a>
+                        <a href="javascript:;;" class="btn"><i class="icon-star-empty"></i></a>
+                        <a href="javascript:;;" class="btn"><i class="icon-star-empty"></i></a>
+                        <a href="javascript:;;" class="btn"><i class="icon-star-empty"></i></a>
+                        <a href="javascript:;;" class="btn"><i class="icon-star-empty"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                    <button class="btn btn-primary" type="submit">Send</button>
+                  </div>
+                </form>
+              </div>
+              <div data-toggle="buttons-radio" class="btn-group">
+                <button class="btn active">Newest</button>
+                <button class="btn">Rating</button>
+                <button class="btn">Helpfulness</button>
+              </div>
+              <div class="clearfix">&nbsp;</div>
+              <table class="table">
+                <tr>
+                  <td>
+                    <p><strong>Mr Smith</strong> - 15 August 2012 <span class="rating-static rating-25 pull-right"></span></p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                    <div class="btn-toolbar pull-right">
+                      <div class="btn-group">
+                        <a href="#" class="btn" rel="tooltip" title="Like"><i class="icon-thumbs-up"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Dislike"><i class="icon-thumbs-down"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Spam"><i class="icon-ban-circle"></i></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p><strong>Mr Smith</strong> - 15 August 2012 <span class="rating-static rating-35 pull-right"></span></p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                    <div class="btn-toolbar pull-right">
+                      <div class="btn-group">
+                        <a href="#" class="btn" rel="tooltip" title="Like"><i class="icon-thumbs-up"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Dislike"><i class="icon-thumbs-down"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Spam"><i class="icon-ban-circle"></i></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p><strong>Mr Smith</strong> - 15 August 2012 <span class="rating-static rating-45 pull-right"></span></p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+                    <div class="btn-toolbar pull-right">
+                      <div class="btn-group">
+                        <a href="#" class="btn" rel="tooltip" title="Like"><i class="icon-thumbs-up"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Dislike"><i class="icon-thumbs-down"></i></a>
+                        <a href="#" class="btn" rel="tooltip" title="Spam"><i class="icon-ban-circle"></i></a>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <div class="pagination">
+                <ul>
+                  <li><a href="#">Prev</a></li>
+                  <li class="active">
+                    <a href="#">1</a>
+                  </li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">Next</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "relateitem"%>
+</section>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pkeke's</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <%= stylesheet_link_tag "store/bootstrap.css", :media => "all" %>
+  <%= stylesheet_link_tag "store/bootstrap-custom.css", :media => "all" %>
+  <%= stylesheet_link_tag "store/bootstrap-responsive.css", :media => "all" %>
+
+
+  <!--Font-->
+  <%= stylesheet_link_tag "store/font-ubuntu.css", :media => "all" %>
+  <!-- uncomment if you want use google cdn
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  -->
+  <%= stylesheet_link_tag "store/font-arimo.css", :media => "all" %>
+  <!-- uncomment if you want use google cdn
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  -->
+  <!-- End Font -->
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <%= favicon_link_tag '/favicon.ico', :rel => "shortcut icon", :type => "images/ico" %>
+
+  <%= favicon_link_tag '/apple-touch-icon-144-precomposed.png', :rel => "shortcut icon", :size =>"144x144", :type => "images/ico" %>
+  <%= favicon_link_tag '/apple-touch-icon-114-precomposed.png', :rel => "shortcut icon", :size =>"114x114", :type => "images/ico" %>
+  <%= favicon_link_tag '/apple-touch-icon-72-precomposed.png', :rel => "shortcut icon", :size =>"72x72", :type => "images/ico" %>
+  <%= favicon_link_tag '/apple-touch-icon-57-precomposed.png', :rel => "shortcut icon", :type => "images/ico" %>
+
+  <!--    Slider-->
+  <%= stylesheet_link_tag "store/slider.css", :media => "all" %>
+
+
+  <!-- super fish menu -->
+  <%= stylesheet_link_tag "store/superfish.css", :media => "all" %>
+
+  <%= javascript_include_tag "application" %>
+
+</head>
+
+<body>
+
+<%=yield%>
+
+</body>
