@@ -7,7 +7,6 @@
   <tr>
     <th>Imagen</th>
     <th>Nombre</th>
-    <th>Seo</th>
     <th>Precio</th>
     <th>Estatus</th>
     <th>Categoria</th>
@@ -20,7 +19,6 @@
   <tr>
     <td><%= image_tag product.avatar.url, :size => "100x100" %></td>
     <td><%= product.name %></td>
-    <td><%= product.seo %></td>
     <td><%= product.precio %></td>
     <td><% if product.status = 1 %>
             Activo

@@ -10,31 +10,56 @@
       </ul>
     </div>
   <% end %>
-
+  <br />
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre del Producto" %>
     <%= f.text_field :name %>
-  </div>
+  </div> <br />
   <div class="field">
-    <%= f.label :seo %><br />
-    <%= f.text_field :seo %>
-  </div>
+    <%= f.label :price_list, "Precio de Lista" %>
+    <%= f.text_field :price_list %>
+  </div><br />
   <div class="field">
-    <%= f.label :precio %><br />
+    <%= f.label :precio, "Precio" %>
     <%= f.text_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.select :status,  options_for_select([["Activo", "1"], ["Inactivo", "2"]])%>
-  </div>
+  </div><br />
   <div class="field">
     <%= f.label :category_id, "Categoria" %>
     <%= f.collection_select :category_id,  Category.order("id").all, :id, :name, options ={:prompt => "-- Selecciona Categoría --"}%>
-  </div>
+  </div><br />
+  <div class="field">
+    <% f.label :subcategory_id, "Sub Categoria" %>
+    <% f.collection_select :subcategory_id,  Category.order("id").all, :id, :name, options ={:prompt => "-- Selecciona Categoría --"}%>
+  </div><br />
+  <div class="field">
+    <%= f.label :status, "Estatus del Producto" %>
+    <%= f.select :status,  options_for_select([["Activo", "1"], ["Inactivo", "2"]])%>
+  </div><br />
+  <div class="field">
+    <%= f.label :availability_id, "Disponibilidad" %>
+    <%= f.collection_select :availability_id,  Availability.order("id").all, :id, :name, options ={:prompt => "-- Selecciona Disponibilidad --"}%>
+  </div><br />
+  <div class="field">
+    <%= f.label :model, "Modelo" %>
+    <%= f.text_field :model%>
+  </div><br />
+  <div class="field">
+    <%= f.label :description, "Descripcion" %>
+    <%= f.text_area :description, :class => "span7", :size => "5x5"%>
+  </div><br />
+  <div class="field">
+    <%= f.label :product_detail, "Detalles del Producto" %>
+    <%= f.text_area :product_detail, :class => "span7", :size => "5x5"%>
+  </div><br />
+  <div class="field">
+    <%= f.label :product_features, "Caracteristicas del Producto" %>
+    <%= f.text_area :product_features, :class => "span7", :size => "5x5"%>
+  </div><br />
+
   <div class="field">
     <%= f.label :avatar, "Fotografía" %>
     <%= f.file_field :avatar %>
-  </div>
+  </div><br />
   <div class="actions">
     <%= f.submit %>
   </div>

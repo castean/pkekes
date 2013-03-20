@@ -5,42 +5,11 @@
     <div class="span5">
       <div class="page-header">
         <h3>
-           <%= @product.name%> <small>Body + 18-55mm lens</small>
+           <%= @product.name%>
         </h3>
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
+        <%= link_to 'Editar Producto', edit_product_path(@product), :class => "btn" %> |
+        <%= link_to 'Regresar a productos', products_path, :class => "btn" %>
 
-        <p>
-          <b>Name:</b>
-          <%= @product.name %>
-        </p>
-
-        <p>
-          <b>Seo:</b>
-          <%= @product.seo %>
-        </p>
-
-        <p>
-          <b>Precio:</b>
-          <%= @product.precio %>
-        </p>
-
-        <p>
-          <b>Status:</b>
-          <%if @product.status = 1 %>
-              Activo
-          <%else%>
-              Inactivo
-          <%end%>
-        </p>
-
-        <p>
-          <b>Category:</b>
-          <%= @product.category.name %>
-        </p>
-        <%#= image_tag @product.avatar.url, :size => "260x180" %>
-        <br/>
-        <br/>
       </div>
 
       <table class="product">
@@ -49,25 +18,37 @@
             <span class="rating-static rating-45" style="float: right;"></span>
           </td>
           <td>
-            (2,908 customer reviews)
+            <!-- (2,908 customer reviews) -->
           </td>
         </tr>
         <tr>
-          <td>Availability:</td>
-          <td>Pre-Order</td>
+          <td>Disponibilidad:</td>
+          <td><%= @product.availability.name%></td>
         </tr>
-        <tr>
-          <td>Precio de Lista:</td>
-          <td><span class="listPrice">$2,200</span></td>
-        </tr>
-        <tr>
-          <td>Precio:</td>
-          <td><span class="priceLarge">$2,000</span></td>
-        </tr>
-        <tr>
-          <td>Usted Ahorra:</td>
-          <td><span class="youSave">$200</span></td>
-        </tr>
+        <%if @product.price_list = @product.precio%>
+          <tr>
+            <td>Precio:</td>
+            <%@p = @product.precio%>
+            <td><span class="priceLarge">$<%= @p%></span></td>
+          </tr>
+        <%else%>
+            <tr>
+              <td>Precio de Lista:</td>
+              <%@pl = @product.price_list%>
+              <td>$<span class="listPrice"><%= @pl%></span></td>
+            </tr>
+            <tr>
+              <td>Precio:</td>
+              <%@p = @product.precio%>
+              <td><span class="priceLarge">$<%= @p%></span></td>
+            </tr>
+            <tr>
+              <td>Usted Ahorra:</td>
+              <td><span class="youSave"><%= (@pl.to_d - @p.to_d)%></span></td>
+            </tr>
+        <%end%>
+
+
         <tr>
           <td colspan="2" style="text-align:left">
             <div class="btn-toolbar">
@@ -136,24 +117,11 @@
       <div class="tab-content">
         <div class="tab-pane active" id="1">
           <div class="page-header"><h3>Descripción</h3></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="page-header"><h3>Caracteristicas del Producto <small>Style: Body + 18-55mm lens</small></h3></div>
-          <ul>
-            <li>12.2 MP CMOS sensor and DIGIC 4 Image Processor for high image quality and speed.</li>
-            <li>ISO 100 - 6400 for shooting from bright to dim light.</li>
-            <li>Improved EOS HD Movie mode with expanded recording and with in-camera video editing options.</li>
-            <li>High speed, reliable 9-point AF system utilizing a high precision, f/5.6 cross-type center point.</li>
-            <li>Enhanced metering with a 63-zone, Dual-layer metering system for accurate metering between exposures.</li>
-          </ul>
+          <p><%= @product.description%></p>
+          <div class="page-header"><h3>Caracteristicas del Producto <small><%= @product.name%></small></h3></div>
+          <%= @product.product_features%>
           <div class="page-header"><h3>Detalles del Producto</h3></div>
-          <ul>
-            <li><strong>Product Dimensions:</strong> 5.1 x 3.1 x 3.9 inches ; 7 ounces</li>
-            <li><strong>Shipping Weight:</strong> 2 pounds (View shipping rates and policies)</li>
-            <li><strong>Shipping:</strong> This item is also available for shipping to select countries outside the U.S.</li>
-            <li><strong>ASIN:</strong> B004J3Y9U6</li>
-            <li><strong>Item model number:</strong> REBEL T3 BLACK</li>
-            <li><strong>Batteries:</strong> 1 Nonstandard Battery batteries required. (included)</li>
-          </ul>
+          <%= @product.product_detail%>
         </div>
         <div class="tab-pane" id="2">
           <div class="row">

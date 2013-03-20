@@ -33,8 +33,14 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Administración", root_path  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li>
+                <%if current_user%>
+                    <%= link_to "Salir", :logout  %>
+                <%else%>
+                    <%= link_to "Entrar", :login  %>
+                <%end%>
+              </li>
+              <li><%= link_to "Tienda", :store  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -50,6 +56,9 @@
               <li><%= link_to "Clientes", clients_path  %></li>
               <li><%= link_to "Categorias", categories_path  %></li>
               <li><%= link_to "Productos", products_path  %></li>
+              <li><%= link_to "Disponibilidad", availabilities_path  %></li>
+              <li><%= link_to "Usuarios", users_path  %></li>
+              <li><%= link_to "Roles de Usuario", roles_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->

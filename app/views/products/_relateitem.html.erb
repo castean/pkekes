@@ -17,8 +17,10 @@
                        <div class="caption">
                           <h5><%= producto.name %></h5>
                           <p><span class="rating-static rating-45"></span></p>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                          <p><a class="btn btn-primary" href="detail.html"><i class="icon-shopping-cart icon-white"></i> $<%= producto.precio %></a> <a class="btn pull-right" href="detail.html">mas...</a></p>
+                          <p><%=producto.description%></p>
+                          <p><i class="icon-shopping-cart icon-white"><%= link_to producto.precio, producto, :class => "btn btn-primary" %></i>
+                             <%= link_to "más", producto, :class => "btn pull-right" %>
+                          </p>
                        </div>
                     </div>
                  </li>
@@ -27,17 +29,22 @@
         </div>
         <div class="item">
            <ul class="thumbnails">
-              <li class="span3">
-                 <div class="thumbnail">
-                    <%= image_tag "missing.gif", :size => "260x180" %>
-                    <div class="caption">
-                       <h5>Thumbnail label</h5>
-                       <p><span class="rating-static rating-40"></span></p>
-                       <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                       <p><a class="btn btn-primary" href="detail.html"><i class="icon-shopping-cart icon-white"></i><%= @product.precio %></i></p></a> <a class="btn pull-right" href="detail.html">mas...</a></p>
-                    </div>
-                 </div>
-              </li>
+              <% @categoria = Product.find(:all, :conditions => {:category_id => @product.category_id}, :limit => my_limit, :order => 'id desc')%>
+              <% @categoria.each do |producto| %>
+                  <li class="span3">
+                     <div class="thumbnail">
+                        <%= image_tag producto.avatar.url, :size => "240x180" %>
+                        <div class="caption">
+                           <h5><%= producto.name %></h5>
+                           <p><span class="rating-static rating-40"></span></p>
+                           <p><%producto.description%></p>
+                           <p><i class="icon-shopping-cart icon-white"><%= link_to producto.precio, producto, :class => "btn btn-primary" %></i>
+                              <%= link_to "más", producto, :class => "btn pull-right" %>
+                           </p>
+                        </div>
+                     </div>
+                  </li>
+              <%end%>
            </ul>
         </div>
   </div>

@@ -1,4 +1,17 @@
 Pkekes1::Application.routes.draw do
+
+  match 'store' => 'store#index', :as => :store
+
+  resources :users, :user_sessions
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
+  resources :roles
+
+
+  resources :availabilities
+
+
   resources :categories
 
 
