@@ -1,6 +1,9 @@
 class StoreController < ApplicationController
   layout :choose_layout
+  # GET /products
+  # GET /products.json
   def index
+
 
   end
 

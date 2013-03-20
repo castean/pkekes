@@ -49,7 +49,15 @@
     </head>
 
     <body>
-        <%=yield%>
+        <section id="main" class="container">
+          <%if current_user%>
+            <%=yield%>
+          <%else%>
+            <%=render "layouts/storeheader"%>
+            <%=yield%>
+            <%=render "layouts/storefooter"%>
+          <%end%>
+        </section>
     </body>
 
 </html>
